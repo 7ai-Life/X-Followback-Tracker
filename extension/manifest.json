@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "X Followback Tracker",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "在自己的 X 正在关注列表中，根据页面关系标识高亮未回关账号。所有处理均在本地。",
   "permissions": [
     "storage"

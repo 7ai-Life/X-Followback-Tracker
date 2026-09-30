@@ -4,11 +4,11 @@
 
 由 [七乂 · 7AI Life（@7ai_Life）](https://x.com/7ai_Life) 制作。
 
-**[下载 v1.1.0 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.0/X-Followback-Tracker-v1.1.0.zip)** · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
+**[下载 v1.1.1 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.1/X-Followback-Tracker-v1.1.1.zip)** · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
 
 ## 效果预览
 
-下面使用虚构账号和模拟计数演示界面。
+下面使用虚构账号和模拟计数演示界面；截图为 v1.1.0，v1.1.1 的功能与布局相同。
 
 ![正在关注列表的未回关标记演示](docs/following-demo.png)
 
@@ -66,9 +66,18 @@ npm run package
 
 ## 版本与反馈
 
+- **v1.1.1**：采用 GPL-3.0-only，安装包包含许可证和对应源码。
 - **v1.1.0**：新增 Logo、浏览器图标、品牌弹窗、作者链接和安装教程。
 - **v1.0.0**：基础标记、开关、动态识别和计数。
 
 反馈时请提供浏览器版本、扩展版本、页面语言和复现步骤。截图请先遮挡不希望公开的信息，勿提交密码、Cookie 或 Token。
 
-当前尚未指定开源许可证；公开源码不等于授予任意修改、再分发或商用许可。
+## 许可证
+
+Copyright (c) 2026 7ai-Life。
+
+本项目自 v1.1.1 起采用 **GNU General Public License v3.0 only（GPL-3.0-only）**，完整条款见 [LICENSE](LICENSE)。允许使用、修改和商用；分发本项目或其修改版本时，应按 GPLv3 履行提供对应源码、保留版权及许可证声明等义务。仅私人修改使用不要求公开发布源码。
+
+软件按现状提供，不提供担保；具体权利和义务以许可证正文为准。作者链接不是额外的强制展示条款。
+
+发行 ZIP 同时包含可安装的 `extension/`、许可证、Logo 源文件、构建与打包脚本、依赖锁文件及测试源码；开发依赖使用各自的许可证，不随安装包分发。

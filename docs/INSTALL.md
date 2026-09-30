@@ -9,10 +9,10 @@
 打开 [GitHub 最新版本页面](https://github.com/7ai-Life/X-Followback-Tracker/releases/latest)，在页面下方的 **Assets** 中下载：
 
 ```text
-X-Followback-Tracker-v1.1.0.zip
+X-Followback-Tracker-v1.1.1.zip
 ```
 
-也可以 [直接下载 v1.1.0](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.0/X-Followback-Tracker-v1.1.0.zip)。
+也可以 [直接下载 v1.1.1](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.1/X-Followback-Tracker-v1.1.1.zip)。
 
 请选择名称以 `X-Followback-Tracker-v` 开头的安装包。GitHub 自动生成的 `Source code (zip)` 是完整源码，普通用户优先下载安装包。
 
@@ -59,7 +59,7 @@ X-Followback-Tracker/
 3. 在文件选择窗口中，选中刚才解压得到的 **`extension` 文件夹**。
 4. 点击「选择文件夹」或「打开」。
 
-成功后，扩展管理页会出现 **X Followback Tracker** 卡片，版本为 **1.1.0**，开关处于开启状态。
+成功后，扩展管理页会出现 **X Followback Tracker** 卡片，版本为 **1.1.1**，开关处于开启状态。
 
 本地加载方式参考 [Chrome 官方文档](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked) 和 [Edge 官方文档](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/extension-sideloading)。
 

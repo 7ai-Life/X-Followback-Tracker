@@ -12,3 +12,12 @@
 - 新版尚未代用户安装到浏览器；本轮没有重新访问真实 X 账号做在线验证。
 
 旧版本保留于 ../outputs/x-followback-marker（相对仓库根目录）。
+
+## v1.1.1 许可证更新
+
+- GPLv3 正文取自 https://www.gnu.org/licenses/gpl-3.0.txt，采用 GPL-3.0-only。
+- README、npm 元数据、源码声明与安装包同步许可证；保留 v1.1.0 安装包。
+- 本版本只添加版权声明和更新版本号，关注判断逻辑不变。
+- JavaScript 语法检查与 7 项回归测试通过。
+- 安装包包含完整许可证、扩展源码、Logo 源文件、构建脚本、锁文件和测试；未包含 node_modules 或 .git。
+- GitHub 发布尚待在具备有效授权的终端执行发布脚本。

@@ -13,10 +13,12 @@ for item in paths:
 output = root / 'dist' / ('X-Followback-Tracker-v' + manifest['version'] + '.zip')
 output.parent.mkdir(exist_ok=True)
 with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as archive:
-    for file in sorted((root / 'extension').rglob('*')):
-        if file.is_file():
-            archive.write(file, str(Path('X-Followback-Tracker') / file.relative_to(root)))
-    for name in ['README.md', 'docs/INSTALL.md', 'docs/PRIVACY.md', 'docs/following-demo.png', 'docs/popup-preview.png']:
+    # Include corresponding source and build inputs, excluding dependencies and generated archives.
+    for directory in ['extension', 'assets', 'scripts', 'tests', 'docs']:
+        for file in sorted((root / directory).rglob('*')):
+            if file.is_file() and '__pycache__' not in file.parts:
+                archive.write(file, str(Path('X-Followback-Tracker') / file.relative_to(root)))
+    for name in ['README.md', 'LICENSE', 'package.json', 'package-lock.json']:
         archive.write(root / name, 'X-Followback-Tracker/' + name)
 with zipfile.ZipFile(output) as archive:
     assert archive.testzip() is None
