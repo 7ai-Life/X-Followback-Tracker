@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "X Followback Tracker",
+  "version": "1.1.0",
+  "description": "在自己的 X 正在关注列表中，根据页面关系标识高亮未回关账号。所有处理均在本地。",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "X Followback Tracker · 未回关标记",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://www.x.com/*",
+        "https://twitter.com/*",
+        "https://www.twitter.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "author": "七乂 · 7AI Life",
+  "homepage_url": "https://x.com/7ai_Life",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

@@ -1,0 +1,19 @@
+[data-testid="UserCell"][data-xfb-missing="true"] {
+  background-color: rgba(255, 45, 73, 0.095) !important;
+  box-shadow: inset 2px 0 0 #ff2d49 !important;
+  border-radius: 12px !important;
+}
+[data-xfb-badge] {
+  display: inline-flex !important;
+  align-items: center !important;
+  align-self: center !important;
+  flex-shrink: 0 !important;
+  margin-inline-end: 7px !important;
+  padding: 3px 5px !important;
+  border-radius: 4px !important;
+  background: #ef2440 !important;
+  color: #fff !important;
+  font: 700 11px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
