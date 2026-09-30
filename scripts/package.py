@@ -1,25 +1,48 @@
 # -*- coding: utf-8 -*-
-"""Package the already-built extension without runtime dependencies."""
+"""Build separate install and corresponding-source archives."""
 from pathlib import Path
 import json
 import zipfile
+
 root = Path(__file__).resolve().parents[1]
 manifest = json.loads((root / 'extension/manifest.json').read_text())
-paths = list(manifest['icons'].values()) + [manifest['action']['default_popup'], 'popup.js', 'popup.css']
+version = manifest['version']
+paths = list(manifest['icons'].values()) + [manifest['action']['default_popup'], 'popup.js', 'popup.css', 'LICENSE']
 for entry in manifest['content_scripts']:
     paths += entry['js'] + entry['css']
 for item in paths:
     assert (root / 'extension' / item).is_file(), item
-output = root / 'dist' / ('X-Followback-Tracker-v' + manifest['version'] + '.zip')
-output.parent.mkdir(exist_ok=True)
-with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as archive:
-    # Include corresponding source and build inputs, excluding dependencies and generated archives.
+
+output_dir = root / 'dist'
+output_dir.mkdir(exist_ok=True)
+install_output = output_dir / f'X-Followback-Tracker-安装包-v{version}.zip'
+source_output = output_dir / f'X-Followback-Tracker-Source-v{version}.zip'
+
+
+def add_file(archive, file, name):
+    # Fixed ZIP metadata makes re-running a release byte-for-byte reproducible.
+    info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+    info.compress_type = zipfile.ZIP_DEFLATED
+    info.external_attr = 0o100644 << 16
+    archive.writestr(info, file.read_bytes())
+
+
+with zipfile.ZipFile(install_output, 'w') as archive:
+    for file in sorted((root / 'extension').rglob('*')):
+        if file.is_file() and '__pycache__' not in file.parts:
+            name = Path('X-Followback-Tracker 安装包') / file.relative_to(root / 'extension')
+            add_file(archive, file, name.as_posix())
+
+with zipfile.ZipFile(source_output, 'w') as archive:
     for directory in ['extension', 'assets', 'scripts', 'tests', 'docs']:
         for file in sorted((root / directory).rglob('*')):
             if file.is_file() and '__pycache__' not in file.parts:
-                archive.write(file, str(Path('X-Followback-Tracker') / file.relative_to(root)))
-    for name in ['README.md', 'LICENSE', 'package.json', 'package-lock.json']:
-        archive.write(root / name, 'X-Followback-Tracker/' + name)
-with zipfile.ZipFile(output) as archive:
-    assert archive.testzip() is None
-print(output)
+                name = Path('X-Followback-Tracker-Source') / file.relative_to(root)
+                add_file(archive, file, name.as_posix())
+    for name in ['README.md', 'LICENSE', 'package.json', 'package-lock.json', '.gitignore']:
+        add_file(archive, root / name, 'X-Followback-Tracker-Source/' + name)
+
+for output in [install_output, source_output]:
+    with zipfile.ZipFile(output) as archive:
+        assert archive.testzip() is None
+    print(output)

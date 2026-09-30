@@ -1,157 +1,96 @@
-# X Followback Tracker 安装教程
+# 安装 X Followback Tracker
 
-用几分钟，为自己的 X 关注列表加上「未回关」标记。
+**下载 → 解压 → 加载文件夹。** 支持电脑端 Chrome / Edge，不需要 Node.js 或 API Key。
 
-适用环境：电脑上的 Chrome 或 Microsoft Edge。无需 API Key，无需安装 Node.js。本教程不适用于手机浏览器、Safari 或 Firefox。
+## 1. 下载安装包并解压
 
-## 第 1 步：下载安装包
+**[点击下载安装包 v1.1.3](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-%E5%AE%89%E8%A3%85%E5%8C%85-v1.1.3.zip)**
 
-打开 [GitHub 最新版本页面](https://github.com/7ai-Life/X-Followback-Tracker/releases/latest)，在页面下方的 **Assets** 中下载：
+下载的文件名是：`X-Followback-Tracker-安装包-v1.1.3.zip`。
 
-```text
-X-Followback-Tracker-v1.1.2.zip
-```
-
-也可以 [直接下载 v1.1.2](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.2/X-Followback-Tracker-v1.1.2.zip)。
-
-请选择名称以 `X-Followback-Tracker-v` 开头的安装包。GitHub 自动生成的 `Source code (zip)` 是完整源码，普通用户优先下载安装包。
-
-## 第 2 步：解压到固定位置
-
-- **Windows**：右键 ZIP →「全部解压缩」。
-- **macOS**：双击 ZIP 解压。
-
-将解压后的文件夹放在「文稿 / Documents」等长期保留的位置。安装后不要删除或移动它，浏览器会持续读取其中的文件。
-
-解压后，应找到这样的目录：
+Windows 右键 →「全部解压缩」；macOS 双击解压。解压后只有一个文件夹：
 
 ```text
-X-Followback-Tracker/
-├── README.md
-├── docs/
-└── extension/                 ← 安装时选择这一层
-    ├── manifest.json
-    ├── content.js
-    ├── content.css
-    ├── popup.html
-    ├── popup.js
-    ├── popup.css
-    └── icons/
+X-Followback-Tracker 安装包
 ```
 
-不同解压工具可能额外包一层目录。判断标准始终是：**所选文件夹里能直接看到 `manifest.json`。**
+把这个文件夹放到「文稿 / Documents」等长期保留的位置。安装后不要删除或移动它。
 
-## 第 3 步：打开浏览器扩展管理页
+## 2. 在浏览器中加载这个文件夹
 
-将对应地址复制到浏览器地址栏，按回车：
+1. 将对应地址粘贴到地址栏并回车：Chrome 使用 `chrome://extensions`；Edge 使用 `edge://extensions`。
+2. 打开「开发者模式 / Developer mode」。
+3. 点击「加载已解压的扩展程序 / Load unpacked」。
+4. 选择刚才解压得到的 **`X-Followback-Tracker 安装包` 文件夹**，点击「选择文件夹」或「打开」。
 
-| 浏览器 | 地址 |
-| --- | --- |
-| Google Chrome | `chrome://extensions` |
-| Microsoft Edge | `edge://extensions` |
+**直接选择这个文件夹即可，不用进入里面再找其他目录。** 成功后会出现 **X Followback Tracker** 扩展卡片，版本为 **1.1.3**，开关处于开启状态。
 
-这是浏览器内部页面地址，需要在地址栏打开，不能当作搜索词搜索。
+浏览器安装方式参考 [Chrome 官方说明](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked) / [Edge 官方说明](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/extension-sideloading)。
 
-## 第 4 步：加载扩展
+## 3. 刷新 X，打开自己的「正在关注」
 
-1. 开启页面中的「开发者模式 / Developer mode」。
-2. 点击「加载已解压的扩展程序 / Load unpacked」。Edge 中文按钮也可能显示「加载解压缩的扩展」。
-3. 在文件选择窗口中，选中刚才解压得到的 **`extension` 文件夹**。
-4. 点击「选择文件夹」或「打开」。
+登录 X，刷新页面，然后从自己的个人主页进入 **「正在关注 / Following」**，等待页面加载约 1 秒。
 
-成功后，扩展管理页会出现 **X Followback Tracker** 卡片，版本为 **1.1.2**，开关处于开启状态。
+未显示「关注了你 / Follows you」标识的已关注账号，会出现浅红背景和「未回关」标签。向下滚动会继续识别。
 
-本地加载方式参考 [Chrome 官方文档](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked) 和 [Edge 官方文档](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/extension-sideloading)。
+[![真实 X 关注列表中的未回关标记](screenshots/x-following-markers.png)](screenshots/x-following-markers.png)
 
-## 第 5 步：在 X 上使用
+[点击查看原图（1752 × 1288）](screenshots/x-following-markers.png)
 
-1. 打开 [X](https://x.com)，登录你自己的账号。
-2. 如果安装前已经打开 X，请先**刷新网页**。
-3. 进入自己的个人主页，点击「正在关注 / Following」。网址通常为 `https://x.com/你的用户名/following`。
-4. 等页面加载约 1 秒：未显示「关注了你 / Follows you」的已关注账号，会出现浅红背景和「未回关」标签。
-5. 继续向下滚动，插件会处理新加载的账号。
+## 开关和统计在哪里？
 
-[![真实 X 关注列表，浅红色标记未回关账号](screenshots/x-following-markers.png)](screenshots/x-following-markers.png)
+点击浏览器工具栏中的扩展菜单（通常是拼图图标），找到 **X Followback Tracker**。可将它固定到工具栏，方便随时打开。
 
-[查看原始清晰截图（1752 × 1288）](screenshots/x-following-markers.png)
+弹窗中可以开关标记、查看当前已渲染账号的统计。自动识别账号失败时，填写自己的用户名（如 `7ai_Life`）并保存，不要填写显示昵称或完整网址。
 
-**应打开自己的 Following，不是 Followers（关注者），也不是别人的关注列表。**
+[![真实 X 页面中的插件弹窗](screenshots/x-followback-popup.png)](screenshots/x-followback-popup.png)
 
-## 第 6 步：固定图标与查看统计
+[点击查看原图（2438 × 1360）](screenshots/x-followback-popup.png)
 
-点击浏览器工具栏的扩展菜单（通常是拼图图标），找到 **X Followback Tracker**，使用「固定」或「在工具栏中显示」。不同浏览器的图标可能略有不同。
-
-打开扩展弹窗后可以：
-
-- 开关「标记未回关账号」。
-- 查看当前页面已渲染账号的未回关、互关和总数。
-- 在自动识别失败时填写自己的用户名，例如 `7ai_Life`，点击「保存」。不要填写显示昵称或整段主页 URL。
-- 点击底部「七乂 · 7AI Life」访问作者主页。
-
-[![真实 X 页面中的扩展弹窗](screenshots/x-followback-popup.png)](screenshots/x-followback-popup.png)
-
-[查看原始清晰截图（2438 × 1360）](screenshots/x-followback-popup.png)
-
-截图由作者提供，展示 v1.1.0 的实际运行状态；v1.1.2 的功能与布局相同。
-
-X 会按需加载和回收列表元素，因此计数随滚动变化，不代表账号全部关注关系。
-
-## 如何更新
-
-本地加载版需要手动更新：
-
-1. 到 [Releases](https://github.com/7ai-Life/X-Followback-Tracker/releases) 下载新安装包并解压。
-2. 将新版 `extension` 文件夹内的文件更新到原来加载的 `extension` 目录，确认 `manifest.json` 的版本已更新。
-3. 回到扩展管理页，点击 X Followback Tracker 卡片上的刷新按钮。
-4. 刷新 X 页面。
-
-如果希望保留不同版本，也可以关闭旧扩展，再从新版 `extension` 文件夹重新加载。避免同时开启两份扩展；重新加载到不同路径可能需要重新设置开关或用户名。
+截图展示 v1.1.0 的实际运行状态，当前版本的功能和布局相同。
 
 ## 常见问题
 
-### 提示「无法加载扩展」或找不到 manifest.json
+### 下载页面有多个 ZIP，该选哪个？
 
-确认已经解压 ZIP，并选择直接含有 `manifest.json` 的 `extension` 文件夹。不要选择 ZIP 文件，也不要选择它上面的项目根目录。
+普通用户只下载名称包含 **「安装包」** 的 ZIP。`Source` 和 GitHub 自动生成的 `Source code` 都是给开发者的源码，不需要下载。
 
-### 安装成功，但 X 没有标记
+### 提示找不到 manifest.json？
 
-按顺序检查：
+确认已解压 ZIP，并选择「X-Followback-Tracker 安装包」文件夹。这个文件夹内应该直接能看到 `manifest.json`。个别解压工具可能额外创建一层外部目录，此时选择里面同名且包含该文件的文件夹。
 
-1. 刷新 X 页面。
-2. 确认扩展已启用，弹窗中的标记开关已打开。
-3. 确认当前是自己账号的「正在关注 / Following」页面。
-4. 查看弹窗状态；如果无法识别身份，填入自己的用户名并保存。
-5. 在浏览器扩展详情中检查站点访问是否允许在 `https://x.com` 运行。
-6. 当前已渲染的账号也可能都已回关，向下滚动继续查看。
+### 安装成功，但没有标记？
 
-仍无效时，到 [Issues](https://github.com/7ai-Life/X-Followback-Tracker/issues) 提交浏览器版本、扩展版本、页面语言和复现步骤。
+先刷新 X，确认正在查看**自己**的「正在关注 / Following」，并检查插件开关已开启。打开弹窗查看状态，身份识别失败时填写用户名。当前列表也可能全部已互关，可向下滚动查看。
 
-### 标记是否百分之百准确？
+仍无效时，在浏览器扩展详情中检查是否允许在 `https://x.com` 运行，或到 [Issues](https://github.com/7ai-Life/X-Followback-Tracker/issues) 反馈浏览器版本、插件版本、页面语言与复现步骤。
 
-插件根据页面有没有「关注了你 / Follows you」关系标识推断。页面加载不完整、X 改版或关系标识未展示，都可能影响判断。对重要账号，可打开主页再核实。
+### 怎么更新？
 
-### 为什么计数比实际关注人数少？
+下载新版安装包并解压。将新版文件夹中的内容更新到原来加载的「X-Followback-Tracker 安装包」目录，再到浏览器扩展管理页点击刷新按钮，最后刷新 X。
 
-计数只覆盖页面当前已渲染的卡片。插件不会一次读取全部关注关系，也不会自动滚到底。
+如果之前加载的是旧版 `extension` 目录，也可直接关闭旧扩展，再按本教程加载新文件夹。避免同时开启两份扩展。
 
-### 会自动取消关注吗？
+### 为什么统计数量不是我全部关注的人数？
 
-不会。插件只添加标记和本地统计，不会自动关注、取关、发帖或私信。
+只统计当前页面已渲染的账号，滚动时可能变化。插件不会自动滚到底，也不会读取完整关注关系。
 
-### 会上传账号数据或需要付费 API 吗？
+### 标记是否绝对准确？
 
-不上传，不需要 API Key。处理在本地完成，仅保存开关与可选用户名。详细说明见 [隐私说明](PRIVACY.md)。
+依据卡片是否显示「关注了你 / Follows you」推断。页面加载延迟或 X 改版可能影响结果，重要账号可进入主页再次核实。
 
-### 公司浏览器没有开发者模式，或者禁止加载
+### 会自动取关、上传数据吗？
 
-这可能是管理员策略限制。请联系管理员，或使用允许本地安装扩展的个人浏览器。
+不会自动关注、取关、发帖或私信。数据在本地处理，仅保存开关和可选用户名。见 [隐私说明](PRIVACY.md)。
 
-### 如何卸载？
+### 公司浏览器不允许加载？
 
-进入扩展管理页，找到 X Followback Tracker，点击「移除」，然后刷新 X。卸载后可删除本地文件夹。
+可能是管理员策略限制，请联系管理员或使用允许本地安装扩展的个人浏览器。本教程面向电脑端 Chrome / Edge，不适用于手机、Safari 或 Firefox。
+
+### 怎么卸载？
+
+在浏览器扩展管理页找到 X Followback Tracker，点击「移除」，然后刷新 X。之后可以删除本地文件夹。
 
 ---
 
-项目：[7ai-Life / X-Followback-Tracker](https://github.com/7ai-Life/X-Followback-Tracker)
-
-作者：[七乂 · 7AI Life](https://x.com/7ai_Life)
+[项目主页](https://github.com/7ai-Life/X-Followback-Tracker) · [作者：七乂 · 7AI Life](https://x.com/7ai_Life)

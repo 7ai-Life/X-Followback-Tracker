@@ -28,3 +28,13 @@
 - 原始 PNG 为 2438 × 1360、1752 × 1288，SHA-256 与上传源文件逐一比对一致。
 - 旧模拟图保留用于历史记录，当前 README 与安装教程不再引用。
 - 本次仅更新文档、截图与版本号，复用 v1.1.1 的功能回归结果。
+
+## v1.1.3 安装与源码分包
+
+- 安装 ZIP 唯一顶层目录为「X-Followback-Tracker 安装包」，manifest.json 位于该目录根部。
+- 安装包只含 extension 运行文件与 LICENSE；没有 README、docs、tests、scripts、assets、package.json 或嵌套 extension 目录。
+- Source ZIP 独立提供对应源码及构建输入，同版本的扩展文件逐字节匹配。
+- 两项分包回归测试通过，实际解压后验证 manifest 引用的脚本、样式、弹窗、图标均存在。
+- 打包采用固定 ZIP 元数据，重复构建结果一致。
+- 发布脚本同步上传并校验安装包与源码包；语法检查通过。
+- content.js 与 popup.js 未改动，复用已有功能回归结果。

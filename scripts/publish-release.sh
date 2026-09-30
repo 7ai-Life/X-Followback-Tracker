@@ -6,7 +6,8 @@ repo='7ai-Life/X-Followback-Tracker'
 expected_remote="https://github.com/${repo}.git"
 version="$(python3 -c 'import json; print(json.load(open("extension/manifest.json"))["version"])')"
 tag="v${version}"
-asset="dist/X-Followback-Tracker-${tag}.zip"
+install_asset="dist/X-Followback-Tracker-安装包-${tag}.zip"
+source_asset="dist/X-Followback-Tracker-Source-${tag}.zip"
 notes="docs/RELEASE-${tag}.md"
 
 login="$(gh api user --jq .login)"
@@ -49,13 +50,15 @@ gh repo view "$repo" --json nameWithOwner --jq .nameWithOwner >/dev/null
 if gh release view "$tag" --repo "$repo" >/dev/null 2>&1; then
   echo "${tag} Release 已存在，保留现有发行内容。"
 else
-  gh release create "$tag" "$asset" --repo "$repo" --verify-tag \
+  gh release create "$tag" "$install_asset" "$source_asset" --repo "$repo" --verify-tag \
     --title "X Followback Tracker ${tag}" --notes-file "$notes" --latest
 fi
 # Verify the public download and compare it with the local release package.
 verify_dir="$(mktemp -d)"
 trap 'rm -rf "$verify_dir"' EXIT
-gh release download "$tag" --repo "$repo" --pattern "$(basename "$asset")" --dir "$verify_dir"
-cmp "$asset" "$verify_dir/$(basename "$asset")"
-echo '发布成功，下载包已校验。'
+for asset in "$install_asset" "$source_asset"; do
+  gh release download "$tag" --repo "$repo" --pattern "$(basename "$asset")" --dir "$verify_dir"
+  cmp "$asset" "$verify_dir/$(basename "$asset")"
+done
+echo '发布成功，安装包和对应源码包均已校验。'
 gh release view "$tag" --repo "$repo" --json url --jq .url
