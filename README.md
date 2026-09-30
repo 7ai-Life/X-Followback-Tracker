@@ -4,7 +4,7 @@
 
 由 [七乂 · 7AI Life（@7ai_Life）](https://x.com/7ai_Life) 制作。
 
-**[下载 v1.1.3 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-%E5%AE%89%E8%A3%85%E5%8C%85-v1.1.3.zip)** · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
+**[下载 v1.1.3 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-Install-v1.1.3.zip)** · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
 
 ## 效果预览
 
