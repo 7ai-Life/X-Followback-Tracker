@@ -4,9 +4,9 @@
 
 ## 1. 下载安装包并解压
 
-**[点击下载安装包 v1.1.3](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-%E5%AE%89%E8%A3%85%E5%8C%85-v1.1.3.zip)**
+**[点击下载安装包 v1.1.3](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-Install-v1.1.3.zip)**
 
-下载的文件名是：`X-Followback-Tracker-安装包-v1.1.3.zip`。
+下载的文件名是：`X-Followback-Tracker-Install-v1.1.3.zip`。
 
 Windows 右键 →「全部解压缩」；macOS 双击解压。解压后只有一个文件夹：
 
@@ -53,7 +53,7 @@ X-Followback-Tracker 安装包
 
 ### 下载页面有多个 ZIP，该选哪个？
 
-普通用户只下载名称包含 **「安装包」** 的 ZIP。`Source` 和 GitHub 自动生成的 `Source code` 都是给开发者的源码，不需要下载。
+普通用户只下载名称包含 **`Install`（安装包）** 的 ZIP。`Source` 和 GitHub 自动生成的 `Source code` 都是给开发者的源码，不需要下载。
 
 ### 提示找不到 manifest.json？
 
