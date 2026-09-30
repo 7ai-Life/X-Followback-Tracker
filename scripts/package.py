@@ -15,7 +15,7 @@ for item in paths:
 
 output_dir = root / 'dist'
 output_dir.mkdir(exist_ok=True)
-install_output = output_dir / f'X-Followback-Tracker-安装包-v{version}.zip'
+install_output = output_dir / f'X-Followback-Tracker-Install-v{version}.zip'
 source_output = output_dir / f'X-Followback-Tracker-Source-v{version}.zip'
 
 
