@@ -9,10 +9,10 @@
 打开 [GitHub 最新版本页面](https://github.com/7ai-Life/X-Followback-Tracker/releases/latest)，在页面下方的 **Assets** 中下载：
 
 ```text
-X-Followback-Tracker-v1.1.1.zip
+X-Followback-Tracker-v1.1.2.zip
 ```
 
-也可以 [直接下载 v1.1.1](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.1/X-Followback-Tracker-v1.1.1.zip)。
+也可以 [直接下载 v1.1.2](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.2/X-Followback-Tracker-v1.1.2.zip)。
 
 请选择名称以 `X-Followback-Tracker-v` 开头的安装包。GitHub 自动生成的 `Source code (zip)` 是完整源码，普通用户优先下载安装包。
 
@@ -59,7 +59,7 @@ X-Followback-Tracker/
 3. 在文件选择窗口中，选中刚才解压得到的 **`extension` 文件夹**。
 4. 点击「选择文件夹」或「打开」。
 
-成功后，扩展管理页会出现 **X Followback Tracker** 卡片，版本为 **1.1.1**，开关处于开启状态。
+成功后，扩展管理页会出现 **X Followback Tracker** 卡片，版本为 **1.1.2**，开关处于开启状态。
 
 本地加载方式参考 [Chrome 官方文档](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked) 和 [Edge 官方文档](https://learn.microsoft.com/en-us/microsoft-edge/extensions/getting-started/extension-sideloading)。
 
@@ -71,7 +71,9 @@ X-Followback-Tracker/
 4. 等页面加载约 1 秒：未显示「关注了你 / Follows you」的已关注账号，会出现浅红背景和「未回关」标签。
 5. 继续向下滚动，插件会处理新加载的账号。
 
-![虚构账号的关注列表演示](following-demo.png)
+[![真实 X 关注列表，浅红色标记未回关账号](screenshots/x-following-markers.png)](screenshots/x-following-markers.png)
+
+[查看原始清晰截图（1752 × 1288）](screenshots/x-following-markers.png)
 
 **应打开自己的 Following，不是 Followers（关注者），也不是别人的关注列表。**
 
@@ -86,7 +88,11 @@ X-Followback-Tracker/
 - 在自动识别失败时填写自己的用户名，例如 `7ai_Life`，点击「保存」。不要填写显示昵称或整段主页 URL。
 - 点击底部「七乂 · 7AI Life」访问作者主页。
 
-![弹窗演示，计数为模拟数据](popup-preview.png)
+[![真实 X 页面中的扩展弹窗](screenshots/x-followback-popup.png)](screenshots/x-followback-popup.png)
+
+[查看原始清晰截图（2438 × 1360）](screenshots/x-followback-popup.png)
+
+截图由作者提供，展示 v1.1.0 的实际运行状态；v1.1.2 的功能与布局相同。
 
 X 会按需加载和回收列表元素，因此计数随滚动变化，不代表账号全部关注关系。
 

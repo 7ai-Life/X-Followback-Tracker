@@ -4,15 +4,19 @@
 
 由 [七乂 · 7AI Life（@7ai_Life）](https://x.com/7ai_Life) 制作。
 
-**[下载 v1.1.1 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.1/X-Followback-Tracker-v1.1.1.zip)** · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
+**[下载 v1.1.2 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.2/X-Followback-Tracker-v1.1.2.zip)** · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
 
 ## 效果预览
 
-下面使用虚构账号和模拟计数演示界面；截图为 v1.1.0，v1.1.1 的功能与布局相同。
+以下为作者提供的真实 X 页面截图，保留上传时的原始像素，点击图片或下方链接可查看原图。截图中的扩展版本为 v1.1.0；v1.1.2 的功能与布局相同。
 
-![正在关注列表的未回关标记演示](docs/following-demo.png)
+[![真实 X 正在关注列表中的未回关标记](docs/screenshots/x-following-markers.png)](docs/screenshots/x-following-markers.png)
 
-![扩展弹窗演示，计数为模拟数据](docs/popup-preview.png)
+[查看关注列表原图（1752 × 1288）](docs/screenshots/x-following-markers.png)
+
+[![真实 X 页面中的扩展弹窗与统计](docs/screenshots/x-followback-popup.png)](docs/screenshots/x-followback-popup.png)
+
+[查看扩展弹窗原图（2438 × 1360）](docs/screenshots/x-followback-popup.png)
 
 ## 3 步安装
 
@@ -66,6 +70,7 @@ npm run package
 
 ## 版本与反馈
 
+- **v1.1.2**：说明和安装教程换为作者提供的原始清晰截图。
 - **v1.1.1**：采用 GPL-3.0-only，安装包包含许可证和对应源码。
 - **v1.1.0**：新增 Logo、浏览器图标、品牌弹窗、作者链接和安装教程。
 - **v1.0.0**：基础标记、开关、动态识别和计数。
