@@ -1,10 +1,10 @@
 # X Followback Tracker v1.1.3
 
-**普通用户请下载「X-Followback-Tracker-安装包-v1.1.3.zip」。**
+**普通用户请下载「X-Followback-Tracker-Install-v1.1.3.zip」。**
 
 解压后只有一个 **「X-Followback-Tracker 安装包」** 文件夹。在 Chrome / Edge 扩展管理页开启「开发者模式」，点击「加载已解压的扩展程序」，直接选择这个文件夹即可。安装后刷新 X，进入自己的「正在关注 / Following」。
 
-[点击下载安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-%E5%AE%89%E8%A3%85%E5%8C%85-v1.1.3.zip) · [3 步安装教程](https://github.com/7ai-Life/X-Followback-Tracker/blob/main/docs/INSTALL.md)
+[点击下载安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-Install-v1.1.3.zip) · [3 步安装教程](https://github.com/7ai-Life/X-Followback-Tracker/blob/main/docs/INSTALL.md)
 
 ## 本次更新
 
