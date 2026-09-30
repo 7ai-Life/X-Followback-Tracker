@@ -16,7 +16,8 @@ with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as archive:
     for file in sorted((root / 'extension').rglob('*')):
         if file.is_file():
             archive.write(file, str(Path('X-Followback-Tracker') / file.relative_to(root)))
-    archive.write(root / 'README.md', 'X-Followback-Tracker/README.md')
+    for name in ['README.md', 'docs/INSTALL.md', 'docs/PRIVACY.md', 'docs/following-demo.png', 'docs/popup-preview.png']:
+        archive.write(root / name, 'X-Followback-Tracker/' + name)
 with zipfile.ZipFile(output) as archive:
     assert archive.testzip() is None
 print(output)

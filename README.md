@@ -1,42 +1,52 @@
 # X Followback Tracker
 
-看清每一次关注。在自己 X 的「正在关注」列表中，高亮未显示「关注了你」的账号。
+**看清每一次关注。** 在自己的 X「正在关注 / Following」列表中，给未显示「关注了你 / Follows you」的账号添加浅红背景和「未回关」标签。
 
-作者：[七乂 · 7AI Life / @7ai_Life](https://x.com/7ai_Life)
+由 [七乂 · 7AI Life（@7ai_Life）](https://x.com/7ai_Life) 制作。
 
-## 本地安装
+**[下载 v1.1.0 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.0/X-Followback-Tracker-v1.1.0.zip)** · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
 
-1. Chrome 打开 `chrome://extensions`；Edge 打开 `edge://extensions`。
-2. 开启「开发者模式」，点击「加载已解压的扩展程序」。
-3. 选择本仓库中的 `extension/` 文件夹（直接包含 manifest.json 的那一层）。
-4. 刷新 X，进入自己的个人主页 →「正在关注」，等待约 1 秒。
+## 效果预览
 
-本机目录：
+下面使用虚构账号和模拟计数演示界面。
 
-```text
-/Users/andy2025/Documents/15_Project/1-X/X-Followback-Tracker/extension
-```
+![正在关注列表的未回关标记演示](docs/following-demo.png)
 
-macOS 的文件选择框可按 `Command + Shift + G` 后粘贴路径。使用 ZIP 时先解压，再选择其中的 extension 文件夹。运行扩展不需要安装 Node.js。
+![扩展弹窗演示，计数为模拟数据](docs/popup-preview.png)
 
-如果安装过旧版，先在扩展管理页关闭旧版，再加载本仓库的版本，避免两份扩展同时处理页面。后续更新只需点击扩展管理页的刷新按钮，再刷新 X。
+## 3 步安装
 
-## 使用
+适用于电脑上的 Chrome / Edge。普通用户不需要编程、Node.js 或 API Key。
 
-- 浅红背景和「未回关」标签：已关注，但卡片未显示「关注了你」。
-- 点工具栏图标：开关标记、查看当前已渲染列表的计数、访问作者 X。
-- 自动识别身份失败时：填自己的用户名并保存；真实账号导航优先。
-- 向下滚动：自动处理新加载的账号。取消关注或离开页面时清除标记。
+1. **下载并解压**上面的 ZIP，将文件夹放在长期保留的位置。
+2. **打开扩展管理页**：Chrome 输入 `chrome://extensions`；Edge 输入 `edge://extensions`。开启「开发者模式」，点击「加载已解压的扩展程序 / Load unpacked」。
+3. **选择 `extension` 文件夹**：必须是直接包含 `manifest.json` 的那一层。安装后刷新 X，进入自己的「正在关注 / Following」列表。
+
+浅红底和「未回关」标签出现即表示已开始工作。向下滚动会继续识别。
+
+遇到目录选择、权限或更新问题，请看 [详细教程与常见问题](docs/INSTALL.md)。本项目通过 GitHub 分发，尚未上架浏览器扩展商店。
+
+## 功能
+
+- 在自己的关注列表中标记未显示回关标识的已关注账号。
+- 滚动加载、页面切换和卡片更新后自动刷新标记。
+- 弹窗开关与「未回关 / 互相关注 / 已渲染关注」计数。
+- 自动识别当前账号，失败时可手动填写用户名。
+- 作者主页入口：[七乂 · 7AI Life](https://x.com/7ai_Life)。
 
 ## 判断范围与隐私
 
-仅处理自己 `/<用户名>/following` 中的关注列表。根据页面关系标识推断，不是官方 API 的完整关系核验。加载延迟、语言或 X 页面结构变化可能影响结果。计数只代表当前 DOM 中已渲染的账号，不是累计扫描或账号总数。
+根据 X 页面关系标识判断，不通过官方 API 核验完整关注关系。页面加载延迟、语言或结构变化可能影响结果。计数只代表当前页面已渲染的账号，不是累计扫描或账号全部关注人数。
 
-处理全部在本地完成；不读取 Cookie、密码或 Token；不发起关系 API 请求或上传数据；不自动关注、取关。仅保存功能开关和可选用户名。点击作者链接时正常打开 X 网站。
+数据处理在本地完成；不读取 Cookie、密码或 Token；不发起关系 API 请求或上传数据；不自动关注或取关。仅保存开关和可选用户名。点击作者链接时正常打开 X 网站。权限详情见 [隐私说明](docs/PRIVACY.md)。
 
-## 开发
+本工具为独立项目，与 X 官方无隶属关系。
+
+## 开发与打包
 
 ```sh
+git clone https://github.com/7ai-Life/X-Followback-Tracker.git
+cd X-Followback-Tracker
 npm ci
 npm test
 npm run check
@@ -44,21 +54,21 @@ npm run build:icons
 npm run package
 ```
 
-建议 Node.js 22.12+。扩展本体没有运行依赖，npm 依赖只用于开发、测试与生成图标。打包额外使用 Python 3，结果写入 `dist/`。
+建议使用 Node.js 22.12+；打包需要 Python 3。扩展本体没有运行依赖。生成的安装包位于 `dist/`。
 
 | 目录 | 内容 |
 | --- | --- |
-| extension/ | 可直接安装的 Manifest V3 扩展 |
-| assets/ | SVG Logo 源文件、512px PNG |
-| scripts/ | 图标生成与 ZIP 打包脚本 |
-| tests/ | 关系判断、开关与弹窗回归 |
-| docs/ | 验证记录、静态演示与预览 |
+| `extension/` | 可以直接安装的 Manifest V3 扩展 |
+| `assets/` | SVG Logo 源文件与 PNG |
+| `scripts/` | 图标生成和打包脚本 |
+| `tests/` | 关系识别、动态更新与弹窗回归测试 |
+| `docs/` | 安装教程、隐私说明、预览和验证记录 |
 
-Logo 采用双向箭头表达关注关系，青绿色表示互关，珊瑚红圆点呼应未回关标记。图标包含 16、32、48、128px PNG；弹窗 Logo 使用内嵌 Base64。
+## 版本与反馈
 
-## 版本
+- **v1.1.0**：新增 Logo、浏览器图标、品牌弹窗、作者链接和安装教程。
+- **v1.0.0**：基础标记、开关、动态识别和计数。
 
-- **v1.1.0**：独立本地仓库；新增 Logo、浏览器图标、弹窗品牌样式、作者超链接与打包脚本。关注判断逻辑沿用 v1.0.0。
-- **v1.0.0**：基础高亮、开关、动态识别和计数。用户于 2026-09-30 反馈功能可用。
+反馈时请提供浏览器版本、扩展版本、页面语言和复现步骤。截图请先遮挡不希望公开的信息，勿提交密码、Cookie 或 Token。
 
-本仓库尚未设置开源许可证；本次仅创建本地仓库，未发布或推送远端。
+当前尚未指定开源许可证；公开源码不等于授予任意修改、再分发或商用许可。
