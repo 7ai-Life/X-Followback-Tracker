@@ -11,7 +11,8 @@ VERSION = json.loads((ROOT / 'extension/manifest.json').read_text())['version']
 
 class ReleasePackages(unittest.TestCase):
     def test_install_extracts_to_one_directly_loadable_folder(self):
-        file = ROOT / 'dist' / f'X-Followback-Tracker-安装包-v{VERSION}.zip'
+        file = ROOT / 'dist' / f'X-Followback-Tracker-Install-v{VERSION}.zip'
+        self.assertTrue(file.name.isascii(), 'Release asset names must use ASCII')
         with zipfile.ZipFile(file) as archive, tempfile.TemporaryDirectory() as directory:
             self.assertIsNone(archive.testzip())
             self.assertEqual({Path(name).parts[0] for name in archive.namelist()}, {'X-Followback-Tracker 安装包'})
