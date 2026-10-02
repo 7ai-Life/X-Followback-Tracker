@@ -1,10 +1,10 @@
 # X Followback Tracker
 
-**看清每一次关注。** 在自己的 X「正在关注 / Following」列表中，给未显示「关注了你 / Follows you」的账号添加浅红背景和「未回关」标签。
+**看清每一次关注。** 在自己的 X「正在关注 / Following」列表中，高亮未显示「关注了你 / Follows you」的账号，帮助快速查看未回关情况。已上架 Chrome 应用商店，推荐直接安装。
 
 由 [七乂 · 7AI Life（@7ai_Life）](https://x.com/7ai_Life) 制作。
 
-**[下载 v1.1.3 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-Install-v1.1.3.zip)** · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
+**[从 Chrome 应用商店安装（推荐）](https://chromewebstore.google.com/detail/x-followback-tracker/jappopnfojjgcmbmpehakeepojbcfmkf)** · [备用 ZIP 安装包 v1.1.3](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-Install-v1.1.3.zip) · **[完整安装教程](docs/INSTALL.md)** · [所有版本](https://github.com/7ai-Life/X-Followback-Tracker/releases) · [反馈问题](https://github.com/7ai-Life/X-Followback-Tracker/issues)
 
 ## 效果预览
 
@@ -18,19 +18,23 @@
 
 [查看扩展弹窗原图（2438 × 1360）](docs/screenshots/x-followback-popup.png)
 
-## 3 步安装
+## 安装（推荐 Chrome 应用商店）
 
-适用于电脑上的 Chrome / Edge。普通用户不需要编程、Node.js 或 API Key。
+已上架 Chrome 应用商店。电脑端 Chrome 用户可以直接安装，无需下载 ZIP、解压或开启开发者模式。
 
-1. **下载并解压**上面的 ZIP，将文件夹放在长期保留的位置。
-2. **打开扩展管理页**：Chrome 输入 `chrome://extensions`；Edge 输入 `edge://extensions`。开启「开发者模式」，点击「加载已解压的扩展程序 / Load unpacked」。
-3. **选择解压得到的 `X-Followback-Tracker 安装包` 文件夹**：直接加载这个文件夹，无需再进入子目录。安装后刷新 X，进入自己的「正在关注 / Following」列表。
+1. 打开 **[X Followback Tracker 商店页面](https://chromewebstore.google.com/detail/x-followback-tracker/jappopnfojjgcmbmpehakeepojbcfmkf)**。
+2. 点击 **「添加至 Chrome」**，在浏览器提示中确认 **「添加扩展程序」**。
+3. 安装完成后刷新 X，进入自己的 **「正在关注 / Following」** 列表。
 
-浅红底和「未回关」标签出现即表示已开始工作。向下滚动会继续识别。
+浅红底和「未回关」标签出现即表示已开始工作。向下滚动会继续识别。可在工具栏的扩展菜单中固定插件，查看开关和统计。
 
-普通用户只下载安装包；开发者可下载 [v1.1.3 对应源码](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-Source-v1.1.3.zip)。
+已安装 GitHub 本地版的用户，改用商店版前请先在 `chrome://extensions` 停用旧版，避免两份扩展同时标记；商店版安装后按需重新设置开关和用户名。
 
-遇到目录选择、权限或更新问题，请看 [详细教程与常见问题](docs/INSTALL.md)。本项目通过 GitHub 分发，尚未上架浏览器扩展商店。
+### 备用方式：GitHub ZIP
+
+无法使用商店，或需要在 Chrome / Edge 手动安装时，可下载 [v1.1.3 安装包](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-Install-v1.1.3.zip)，解压后按 [手动安装步骤](docs/INSTALL.md#备用方式github-zip-手动安装) 加载唯一的 `X-Followback-Tracker 安装包` 文件夹。
+
+开发者可下载 [对应源码](https://github.com/7ai-Life/X-Followback-Tracker/releases/download/v1.1.3/X-Followback-Tracker-Source-v1.1.3.zip)。普通用户优先从商店安装。
 
 ## 功能
 
