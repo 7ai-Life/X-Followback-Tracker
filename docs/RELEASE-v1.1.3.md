@@ -1,6 +1,8 @@
 # X Followback Tracker v1.1.3
 
-**普通用户请下载「X-Followback-Tracker-Install-v1.1.3.zip」。**
+**推荐安装：[Chrome 应用商店](https://chromewebstore.google.com/detail/x-followback-tracker/jappopnfojjgcmbmpehakeepojbcfmkf)。** 无需解压或开启开发者模式；下面的 v1.1.3 ZIP 保留为手动安装备用。
+
+**使用备用 ZIP 安装时，请下载「X-Followback-Tracker-Install-v1.1.3.zip」。**
 
 解压后只有一个 **「X-Followback-Tracker 安装包」** 文件夹。在 Chrome / Edge 扩展管理页开启「开发者模式」，点击「加载已解压的扩展程序」，直接选择这个文件夹即可。安装后刷新 X，进入自己的「正在关注 / Following」。
 
